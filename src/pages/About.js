@@ -13,7 +13,7 @@ const About = () => {
         .then((r) => r.text())
         .then(setMarkdown);
     });
-  });
+  }, []); // Fixed missing dependency array to prevent infinite re-renders
 
   const count = markdown
     .split(/\s+/)
@@ -21,7 +21,7 @@ const About = () => {
     .filter((s) => s.length).length;
 
   return (
-    <Main title="About" description="Learn about Michael D'Angelo">
+    <Main title="About" description="Learn about Pranav Motarwar">
       <article className="post markdown" id="about">
         <header>
           <div className="title">
